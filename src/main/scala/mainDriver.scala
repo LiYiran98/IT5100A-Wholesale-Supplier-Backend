@@ -69,7 +69,14 @@ object mainDriver extends App {
                 TopBalance.TopBalanceExecutor()
             }
             case "R"  => {
-                println("Related Customer")
+                println("Please enter the customer identifiers:")
+                print("C_W_ID: ")
+                val C_W_ID = readLine()
+                print("C_D_ID: ")
+                val C_D_ID = readLine()
+                print("C_ID: ")
+                val C_ID = readLine()
+                RelatedCustomer.RelatedCustomerExecutor(C_W_ID, C_D_ID, C_ID)
             }
             case "Q"  => {
                 println("Bye!")
