@@ -44,13 +44,29 @@ object mainDriver extends App {
                 OrderStatus.OrderStatusExecutor(C_W_ID, C_D_ID, C_ID)
             }
             case "S"  => {
-                println("Stock Level")
+                println("Please enter the customer identifiers:")
+                print("W_ID: ")
+                val W_ID = readLine()
+                print("D_ID: ")
+                val D_ID = readLine()
+                print("T: ")
+                val T = readLine()
+                print("L: ")
+                val L = readLine()
+                StockLevel.StockLevelExecutor(W_ID, D_ID, T, L)
             }
             case "I"  => {
-                println("Popular Item")
+                println("Please enter the customer identifiers:")
+                print("W_ID: ")
+                val W_ID = readLine()
+                print("D_ID: ")
+                val D_ID = readLine()
+                print("L: ")
+                val L = readLine()
+                PopularItem.PopularItemExecutor(W_ID, D_ID, L)
             }
             case "T"  => {
-                println("Top Balance")
+                TopBalance.TopBalanceExecutor()
             }
             case "R"  => {
                 println("Related Customer")
