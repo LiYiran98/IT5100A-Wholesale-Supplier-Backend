@@ -19,7 +19,16 @@ object mainDriver extends App {
                 println("New Order")
             }
             case "P"  => {
-                println("Payment")
+                println("Please enter the customer identifiers:")
+                print("C_W_ID: ")
+                val C_W_ID = readLine()
+                print("C_D_ID: ")
+                val C_D_ID = readLine()
+                print("C_ID: ")
+                val C_ID = readLine()
+                print("Please enter the payment amount:")
+                val payment = readLine()
+                Payment.PaymentExecutor(C_W_ID, C_D_ID, C_ID, payment)
             }
             case "D"  => {
                 println("Delivery")
