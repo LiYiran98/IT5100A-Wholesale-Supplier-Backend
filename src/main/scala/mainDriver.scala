@@ -31,7 +31,11 @@ object mainDriver extends App {
                 Payment.PaymentExecutor(C_W_ID, C_D_ID, C_ID, payment)
             }
             case "D"  => {
-                println("Delivery")
+                print("Please enter the warehouse ID: ")
+                val W_ID = readLine()
+                print("Please enter the carrier ID: ")
+                val CARRIER_ID = readLine()
+                Delivery.DeliveryExecutor(W_ID, CARRIER_ID)
             }
             case "O"  => {
                 println("Please enter the customer identifiers:")
@@ -49,9 +53,9 @@ object mainDriver extends App {
                 val W_ID = readLine()
                 print("D_ID: ")
                 val D_ID = readLine()
-                print("T: ")
+                print("Stock threshold: ")
                 val T = readLine()
-                print("L: ")
+                print("Number of last orders to be examined: ")
                 val L = readLine()
                 StockLevel.StockLevelExecutor(W_ID, D_ID, T, L)
             }
@@ -61,7 +65,7 @@ object mainDriver extends App {
                 val W_ID = readLine()
                 print("D_ID: ")
                 val D_ID = readLine()
-                print("L: ")
+                print("Number of last orders to be examined: ")
                 val L = readLine()
                 PopularItem.PopularItemExecutor(W_ID, D_ID, L)
             }

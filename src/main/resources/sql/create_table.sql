@@ -152,3 +152,15 @@ CREATE TABLE IF NOT EXISTS newOrderInfoTable (
 
     PRIMARY KEY (NO_DRIVER_ID, NO_XACT_ID, NO_ROW_COUNT)
     );
+    
+ -- 用于Delivery的临时表
+ 
+ CREATE TABLE IF NOT EXISTS tmp_delivery
+ (
+     o_w_id INT NOT NULL,
+     o_d_id INT NOT NULL,
+     o_c_id INT NOT NULL,
+     sum_amount DECIMAL(20,2),
+     
+     PRIMARY KEY (O_W_ID, O_D_ID, O_C_ID)
+ );
