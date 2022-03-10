@@ -28,11 +28,11 @@ object mainDriver extends App {
                 var newOrderInfo = ""
                 var i = 1
                 
-                println("Please enter item information: ")
-                println("(Seperate the 3 numbers with commas: Item ID, Supply Warehouse ID, Quantity)")
+                println(s"Please enter information for $M items: ")
+                println("(Separate the 3 numbers with commas: Item ID, Supply Warehouse ID, Quantity)")
                 
                 while(i <= M) {
-                    var l = readLine()
+                    val l = readLine()
                     if(i == 1) {
                         newOrderInfo = "(" + i.toString + ", " + l + "," + W_ID + "," + D_ID + "," + C_ID + ")"
                     }
@@ -73,7 +73,7 @@ object mainDriver extends App {
                 OrderStatus.OrderStatusExecutor(C_W_ID, C_D_ID, C_ID)
             }
             case "S"  => {
-                println("Please enter the customer identifiers:")
+                println("Please enter the district identifiers:")
                 print("W_ID: ")
                 val W_ID = readLine()
                 print("D_ID: ")
@@ -85,7 +85,7 @@ object mainDriver extends App {
                 StockLevel.StockLevelExecutor(W_ID, D_ID, T, L)
             }
             case "I"  => {
-                println("Please enter the customer identifiers:")
+                println("Please enter the district identifiers:")
                 print("W_ID: ")
                 val W_ID = readLine()
                 print("D_ID: ")

@@ -1,5 +1,5 @@
 -- Create Database
-DROP DATABASE tpcc;
+DROP DATABASE IF EXISTS tpcc;
 
 CREATE DATABASE tpcc;
 
