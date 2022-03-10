@@ -16,7 +16,32 @@ object mainDriver extends App {
         val key = readLine()
         key match {
             case "N"  => {
-                println("New Order")
+                print("Customer ID: ")
+                val C_ID = readLine()
+                print("Warehouse ID: ")
+                val W_ID = readLine()
+                print("District ID: ")
+                val D_ID = readLine()
+                print("Number of items: ")
+                val M = readLine().toInt
+                
+                var newOrderInfo = ""
+                var i = 1
+                
+                println("Please enter item information: ")
+                println("(Seperate the 3 numbers with commas: Item ID, Supply Warehouse ID, Quantity)")
+                
+                while(i <= M) {
+                    var l = readLine()
+                    if(i == 1) {
+                        newOrderInfo = "(" + i.toString + ", " + l + "," + W_ID + "," + D_ID + "," + C_ID + ")"
+                    }
+                    else {
+                        newOrderInfo = newOrderInfo + "," + "(" + i.toString + ", " + l + "," + W_ID + "," + D_ID + "," + C_ID + ")"
+                    }
+                    i = i + 1
+                }
+                NewOrder.NewOrderExecutor(newOrderInfo, C_ID, W_ID, D_ID, M)
             }
             case "P"  => {
                 println("Please enter the customer identifiers:")
