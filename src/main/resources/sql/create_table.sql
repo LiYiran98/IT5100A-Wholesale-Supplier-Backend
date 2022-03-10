@@ -140,8 +140,6 @@ CREATE INDEX item_idx ON order_line (OL_I_ID);		-- for both Workload A and Workl
 -- 用于NewOrderTransaction的临时表
 
 CREATE TABLE IF NOT EXISTS newOrderInfoTable (
-                                                 NO_DRIVER_ID INT NOT NULL,
-                                                 NO_XACT_ID INT NOT NULL,
                                                  NO_ROW_COUNT INT NOT NULL,
                                                  NO_ITEM_NUMBER INT,				-- I_ID of each ordered item
                                                  NO_SUPPLIER_WAREHOUSE INT,		-- W_ID of supplier warehouse for each ordered item
@@ -150,7 +148,7 @@ CREATE TABLE IF NOT EXISTS newOrderInfoTable (
     NO_D_ID INT,					-- D_ID of the customer who created this order
     NO_C_ID INT,					-- C_ID of the customer who created this order
 
-    PRIMARY KEY (NO_DRIVER_ID, NO_XACT_ID, NO_ROW_COUNT)
+    PRIMARY KEY (NO_ROW_COUNT)
     );
     
  -- 用于Delivery的临时表
@@ -163,4 +161,16 @@ CREATE TABLE IF NOT EXISTS newOrderInfoTable (
      sum_amount DECIMAL(20,2),
      
      PRIMARY KEY (O_W_ID, O_D_ID, O_C_ID)
+ );
+ 
+ CREATE TABLE IF NOT EXISTS tmp_new_order
+ (
+     no_supplier_warehouse INT NOT NULL,
+     no_item_number INT NOT NULL,
+     adjusted_quantity DECIMAL(4, 0),
+     new_ytd DECIMAL(12, 2),
+     new_order_cnt INT NOT NULL,
+     new_remote_cnt INT NOT NULL,
+     
+     PRIMARY KEY (no_supplier_warehouse, no_item_number)
  );
