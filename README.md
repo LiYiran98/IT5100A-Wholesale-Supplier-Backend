@@ -43,7 +43,7 @@ sbt run
 ```
 Test with sample test cases provided in **testcase.txt** 
 and feel free to try your own operation in the system!
-### Contribution
+## Contribution
 - Li Yiran
 - Jiang Lei
 - Xu Chuke
