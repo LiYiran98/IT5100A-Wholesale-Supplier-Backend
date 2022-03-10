@@ -1,7 +1,7 @@
 # IT5100A-Wholesale-Supplier-Backend
 
 ## Instructions
-This is a Scala application that tests the performance of MySQL database using TPC-C benchmark.
+This is a Scala application that implements a wholesale system using TPC-C benchmark.
 
 ## Requirements
 - MySQL 8.0+
