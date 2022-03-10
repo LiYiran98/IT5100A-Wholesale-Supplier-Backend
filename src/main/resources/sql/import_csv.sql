@@ -1,6 +1,6 @@
 USE tpcc;
 -- customer
-# DELETE FROM customer;
+
 LOAD DATA INFILE '../Uploads/customer-1.csv'
     IGNORE
     INTO TABLE customer
